@@ -16,10 +16,10 @@ Prepared as an activity of the [Middle East Technical University - CENG 796 Deep
 <!-- TOC -->
 * [Motivation](#motivation)
 * [Change of Variables](#change-of-variables)
-  * [Geometry: Determinants and Volumes](#geometry-determinants-and-volumes-)
-  * [Generalized Change of Variables](#generalized-change-of-variables-)
+  * [Geometry: Determinants and Volumes](#geometry-determinants-and-volumes)
+  * [Generalized Change of Variables](#generalized-change-of-variables)
   * [Two-Dimensional Example](#two-dimensional-example)
-* [Normalizing Flow Models](#normalizing-flow-models-)
+* [Normalizing Flow Models](#normalizing-flow-models)
   * [Planar Flow](#planar-flow)
   * [Learning and Inference](#learning-and-inference)
   * [Desiderate (Desired Thing) for Flow Models](#desiderate-desired-thing-for-flow-models)
@@ -33,7 +33,7 @@ Prepared as an activity of the [Middle East Technical University - CENG 796 Deep
     * [Masked Convolution](#masked-convolution)
     * [Other Components](#other-components)
     * [Results](#results)
-  * [Autoregressive Models as Flow Models](#autoregressive-models-as-flow-models-)
+  * [Autoregressive Models as Flow Models](#autoregressive-models-as-flow-models)
   * [Inverse Autoregressive Flow](#inverse-autoregressive-flow)
     * [Inverse Autroregressive Transformation](#inverse-autroregressive-transformation)
     * [Inverse Autroregressive Flow (IAF)](#inverse-autroregressive-flow-iaf)
@@ -84,7 +84,7 @@ p_X(6) = p_Z(h(6))h'(6) = p_Z(2)h'(6) = \frac{1}{4} \times \frac{1}{3} = \frac{1
 
 we obtain the same result as the previous calculation.
 
-### Geometry: Determinants and Volumes 
+### Geometry: Determinants and Volumes
 
 Let $Z$ be defined as a random variable having a uniform distribution in an $n$ dimensional space with the range of $[0,1]$, which corresponds to a unit hypercube $[0,1]^n$. Suppose we multiply $Z$ with a square invertible matrix $A$, i.e. $X=AZ$. In that case, this matrix maps the unit hypercube into a parallelotope having its volume equal to the absolute value of the determinant of matrix $A$. This mapping is visualized with a simple case (2D space) as follows for a better understanding:
 
@@ -117,7 +117,7 @@ Considering the change of variable in uniform distribution, $p_X(x)$ can be defi
 p_X(x) = p_Z(Wx)|det(W)| = p_Z(Wx)/|det(A)|
 ```
 
-### Generalized Change of Variables 
+### Generalized Change of Variables
 
 We can generalize the change of pdf by considering the logic in the previously given examples. The pdf of $X$ can be determined from the pdf of $Z$, where the marginal likelihood $p(x)$ is expressed as:
 
@@ -164,7 +164,7 @@ p_{X_{1},X_{2}}(x_{1},x_{2}) = p_{Z_{1},Z_{2}}(z_{1},z_{2})
 ```
 
 
-## Normalizing Flow Models 
+## Normalizing Flow Models
 
 The name "normalizing flow" can be interpreted as the following:
 
@@ -435,7 +435,7 @@ the resulting manifold is projected back into the data space by $g(z)$. The resu
 
 <center><img width="960" src="src/normalizing_flows/realnvp_manifold.png"></center>
 
-### Autoregressive Models as Flow Models 
+### Autoregressive Models as Flow Models
 Briefly, we will first discuss these two family of neural density estimators: (1) autoregressive models and (2) normalizing flows.
 
 At the core, autoregressive models decompose the joint density as a product of conditionals and model each conditional in turn, while normalizing flows transform a base density (e.g. a standard Gaussian) into the target density using an invertible transformation with a tractable Jacobian [4].
